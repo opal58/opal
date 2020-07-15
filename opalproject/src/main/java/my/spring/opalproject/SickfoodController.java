@@ -87,5 +87,11 @@ public class SickfoodController {
       return mav;
    }
 
+   @RequestMapping(value = "/recipemain")
+	public String recipemain() {
+		return "recipemain";
+
+	}
+
 
 }
