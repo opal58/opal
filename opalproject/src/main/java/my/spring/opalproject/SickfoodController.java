@@ -92,6 +92,12 @@ public class SickfoodController {
 		return "recipemain";
 
 	}
+   
+   @RequestMapping(value = "/recipedetail1")
+	public String recipedetail1() {
+		return "recipedetail1";
+
+	}
 
 
 }

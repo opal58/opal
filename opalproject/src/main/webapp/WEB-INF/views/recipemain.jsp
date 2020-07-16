@@ -30,7 +30,7 @@
 	      <div class="card-body ">
 	        <h5 class="card-title text-center">농가살리는 차돌박이찜</h5>
 	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
+	      		<a href="/opalproject/recipedetail1" class="btn btn-warning">레시피 보러가기</a>
 	      	</div>
 	      </div>
 	    </div>
