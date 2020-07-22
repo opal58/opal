@@ -18,7 +18,7 @@
 <br>
 <br>
 <div class="text-center">
-<h1>농가 살리는 OPAL 레시피</h1>
+<h1>농가 살리는 OPAL 레시피 & 농가 스토리</h1>
 </div>
 
 <!-- 레시피 메인 카드 출력 시작 -->
@@ -26,7 +26,7 @@
 	<div class="row row-cols-1 row-cols-md-3">
 	  <div class="col mb-4">
 	    <div class="card">
-	      <img src="resources/img/remain1.png" class="card-img-top" alt="...">
+	      <img src="resources/img/remain1.png" class="card-img-top" alt="..." >
 	      <div class="card-body ">
 	        <h5 class="card-title text-center">농가살리는 차돌박이찜</h5>
 	      	<div class="text-center">
@@ -37,11 +37,22 @@
 	  </div>
 	  <div class="col mb-4">
 	    <div class="card">
+	      <img src="resources/img/farmst1.jpg" class="card-img-top" alt="...">
+	      <div class="card-body ">
+	        <h5 class="card-title text-center">토종닭 우리맛닭을 아시나요?</h5>
+	      	<div class="text-center">
+	      		<a href="/opalproject/recipedetail2" class="btn btn-warning">농가스토리 보러가기</a>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>	  
+	  <div class="col mb-4">
+	    <div class="card">
 	      <img src="resources/img/remain2.png" class="card-img-top" alt="...">
 	      <div class="card-body">
 	        <h5 class="text-center">농가살리는 바싹감자전</h5>
 	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
+	      		<a href="/opalproject/recipedetail3" class="btn btn-warning">레시피 보러가기</a>
 	      	</div>
 	      </div>
 	    </div>
@@ -53,6 +64,17 @@
 	        <h5 class="text-center">농가살리는 콩나물새우찜</h5>
 	      	<div class="text-center">
 	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col mb-4">
+	    <div class="card">
+	      <img src="resources/img/farmst2.jpg" class="card-img-top" alt="...">
+	      <div class="card-body ">
+	        <h5 class="card-title text-center">혈관건강 책임지는 메밀</h5>
+	      	<div class="text-center">
+	      		<a href="/opalproject/recipedetail5" class="btn btn-warning">농가스토리 보러가기</a>
 	      	</div>
 	      </div>
 	    </div>

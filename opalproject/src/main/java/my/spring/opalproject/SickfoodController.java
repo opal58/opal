@@ -98,6 +98,28 @@ public class SickfoodController {
 		return "recipedetail1";
 
 	}
+   
+   @RequestMapping(value = "/recipedetail2")
+	public String recipedetail2() {
+		return "recipedetail2";
+
+	}
+   @RequestMapping(value = "/recipedetail3")
+	public String recipedetail3() {
+		return "recipedetail3";
+
+	}
+   @RequestMapping(value = "/recipedetail4")
+	public String recipedetail4() {
+		return "recipedetail4";
+
+	}
+   @RequestMapping(value = "/recipedetail5")
+	public String recipedetail5() {
+		return "recipedetail5";
+
+	}
+
 
 
 }

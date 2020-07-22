@@ -53,22 +53,20 @@ float:right;
 <h5><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> 요리 재료</h5>
 <br>
 <h6>[재료]</h6>
-<p>차돌박이 10장, 깻잎 5장, 팽이버섯 1묶음, 숙주나물 1주먹</p>
+<p>감자 1개, 부침가루 0.5숟갈, 소금 0.3숟갈</p>
 <br>
-<h6>[미소된장마요소스]</h6>
-<p>미소된장 1큰숟갈, 마요네즈 1숟갈, 올리고당 1숟갈, 다진마늘 0.5숟갈, 고추가루 0.3숟갈, <br>청양고추 1개다진것, 물 2숟갈</p>
-<br>
+
 <h5><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> 조리 순서</h5>
 <!-- 20200722 희정 카드 시작 -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 팽이버섯은 밑둥을 잘라내고 씻어주시고 깻잎도 흐르는물에 씻어주세요</h6>
+	       <h6>1인분 분량의 감자전 레시피 입니다. 더 많이 만드실 분들은 양을 늘려주시면 될 듯 합니다.</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_1.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_1.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -78,11 +76,11 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 차돌박이 위에깻잎을 올리고</h6>
+	       <h6> 감자는 깨끗히 씻어 껍질을 벗긴 뒤 채칼을 이용해서 얇게 채썰어줍니다 채칼이 없으시면 직접 최대한 얇게 썰어주세요</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_2.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_2.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -92,11 +90,11 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 그위에 팽이버섯을 올려준뒤</h6>
+	       <h6> 얇게 채썬 감자는 찬물에 10분정도 담궈 전분기를 제거하고 채반에 받쳐 물기를 제거해줍니다</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_3.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_3.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -106,11 +104,11 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 돌돌 말아주기만하면 완성이에요</h6>
+	       <h6>약간의 점성을 주기위해 부침가루를 0.5숟갈 넣어주고~ 소금도 넣어 간을해준뒤 섞어줍니다</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_4.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_4.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -120,11 +118,11 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 만드는 방법 완전 간단하죠?</h6>
+	       <h6> 이제 팬에 기름을 두르고 감자채전을 만들거에요 감자채를 동그랗게 모양잡아 올려주세요</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_5.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_5.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -134,11 +132,11 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> 냄비에 숙주나물을 한주먹 깔고</h6>
+	       <h6>아랫면이 단단하게 익고나서 뒤집어야 모양이 흐트러지지않습니다 팬 손잡이를 잡고 휙휙 팬을 돌렸을때 감자전에 자유자재로 움직이면 아랫면이 단단하게 익었다는 증거에요</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_6.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_6.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -148,76 +146,15 @@ float:right;
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>차돌박이를 올려 10분간 쪄주면 끝</h6>
+	       <h6>노릇노릇 잘익혀서 그릇에 담아주면 완성 반찬으로도 좋고 야식, 간식으로도 짱짱!</h6>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_7.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail2_7.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
 <!-- 20200722 희정 카드 끝-->
-<!-- 20200722 희정 카드 시작 -->
-	<div class="card border-white mb-3" >
-	  <div class="row no-gutters">  
-	    <div class="col-md-8">
-	      <div class="card-body">
-	       <h6> 차돌박이찜이 완성되는 사이 소스를 만들어볼게요!<br>
-	       	처음엔 된장이랑 마요네즈? 하실텐데 드셔보시면 고기랑 정말 잘어울리는 소스!<br>
-	       	분량의 재료들을 잘섞어주시면되구요 미소된장이 없으시다면 집된장 말고 시판된장 싱거운걸 사용하셔도 됩니다</h6>
-	      </div>
-	    </div>
-	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_8.png" height="150px" width="200px" class="card-img" alt="...">
-	    </div>
-	  </div>
-	</div>
-<!-- 20200722 희정 카드 끝-->
-<!-- 20200722 희정 카드 시작 -->
-	<div class="card border-white mb-3" >
-	  <div class="row no-gutters">  
-	    <div class="col-md-8">
-	      <div class="card-body">
-	       <h6> 차돌박이 찜기에 넣고 소스만들면 그사이 차돌박이찜 완성입니다<br>
-					금새 익기때문에 정말 초스피드로 완성할수있는 요리에요</h6>
-	      </div>
-	    </div>
-	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_9.png" height="150px" width="200px" class="card-img" alt="...">
-	    </div>
-	  </div>
-	</div>
-<!-- 20200722 희정 카드 끝-->
-<!-- 20200722 희정 카드 시작 -->
-	<div class="card border-white mb-3" >
-	  <div class="row no-gutters">  
-	    <div class="col-md-8">
-	      <div class="card-body">
-	       <h6>예쁘게 그릇에 담아주면 끝!</h6>
-	      </div>
-	    </div>
-	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_10.png" height="150px" width="200px" class="card-img" alt="...">
-	    </div>
-	  </div>
-	</div>
-<!-- 20200722 희정 카드 끝-->
-<!-- 20200722 희정 카드 시작 -->
-	<div class="card border-white mb-3" >
-	  <div class="row no-gutters">  
-	    <div class="col-md-8">
-	      <div class="card-body">
-	       <h6> 된장마요소스에 콕 찍어먹으면 정말 맛있답니다. 강력추천!</h6>
-	      </div>
-	    </div>
-	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_11.png" height="150px" width="200px" class="card-img" alt="...">
-	    </div>
-	  </div>
-	</div>
-<!-- 20200722 희정 카드 끝-->
-	
-		
 	
 </div>
 
