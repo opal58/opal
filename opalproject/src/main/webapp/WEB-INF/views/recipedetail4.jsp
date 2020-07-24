@@ -1,70 +1,118 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<style>
-.dot {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.redetail{
-padding-left:20%;
-padding-right:20%;
-}
-
-.retable{
-width:50%;
-float:left;
-
-}
-
-.retable2{
-width:50%;
-float:right;
-}
-</style>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPAL :: Recipe</title>
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/Opal.png">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/flexslider.css">
+<link rel="stylesheet" href="resources/css/jquery.fancybox.css">
+<link rel="stylesheet" href="resources/css/main.css">
+<link rel="stylesheet" href="resources/ourcss/recipedetail.css">
+<link rel="stylesheet" href="resources/css/responsive.css">
+<link rel="stylesheet" href="resources/css/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#nav ul#sub-menu").hide();
+		$("#nav ul#main-menu li").click(function() {
+			$("ul", this).slideToggle("fast");
+		});
+	});
+</script>
 </head>
 <body>
+
+
+	<section class="banner" role="banner">
+		<header id="header">
+			<div id="nav" class="header-content clearfix">
+				<a class="logo" href="/opalproject/index"> <img
+					src="resources/images/Opal.png" width="100" alt=""></a>
+				<nav class="navigation" role="navigation">
+					<ul id="main-menu" class="primary-nav">
+						<li><a href="/opalproject/about">ì˜¤íŒ”ì´ëž€</a></li>
+						<li><a href="/opalproject/team">íŒ€ì†Œê°œ</a></li>
+						<!-- ë¡œê·¸ì¸ì¤‘ì´ ì•„ë‹ ë•Œì—ë§Œ Login ë²„íŠ¼ì´ ë³´ìž„  -> taglib ( security/tags ) ë•Œë¬¸ì— ê°€ëŠ¥ -->
+						<sec:authorize access="isAnonymous()">
+							<li><a href='${pageContext.request.contextPath}/signin'>ë¡œê·¸ì¸</a></li>
+							<li><a href="/opalproject/signup">íšŒì›ê°€ìž…</a></li>
+						</sec:authorize>
+						<sec:authorize access="isAuthenticated()">
+							<li><a href="#">íšŒì›ì •ë³´</a>
+								<ul id="sub-menu">
+									<li><a href="/opalproject/meminfomodify">íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
+									<li><a href="/opalproject/cart/list">ìž¥ë°”êµ¬ë‹ˆ</a></li>
+								</ul>
+							<li><form action="${pageContext.request.contextPath}/logout" method="POST">
+									<input id="logoutBtn" class="logout_button" type="submit" value="ë¡œê·¸ì•„ì›ƒ" /> 
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+								</form></li>
+						</sec:authorize>
+					</ul>
+				</nav>
+				<a href="#" class="nav-toggle">Menu<span></span></a>
+			</div>
+			<!-- header content -->
+		</header>
+		<!-- header -->
+		<div class="container">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="banner-text text-center">
+					<h1>RECIPE</h1>
+				</div>
+				<!-- banner text -->
+			</div>
+		</div>
+	</section>
+	<!-- banner -->
+
+
+
 <br>
 <br>
 <div class="text-center">
-<h1>³ó°¡ »ì¸®´Â OPAL ·¹½ÃÇÇ</h1>
+<h1 class="recipe_h1">ë†ê°€ ì‚´ë¦¬ëŠ” OPAL ë ˆì‹œí”¼</h1>
 <br>
-<img src="resources/img/remain1.png" width='350px' height='240px' alt="...">
+
+<div class="recipe_img">
+<img src="resources/img/remain1.png" width="500px">
+</div>
 <br><br>
-<h6>¼Õ´Ô»óÂ÷¸²À¸·Îµµ ÁÁÀº Â÷µ¹¹ÚÀÌÂò ÀÔ´Ï´Ù.<br>
-¸¸µé±âµµ ³Ê¹«½±°í ¸ð¾çµµ ¿¹»µ¼­ ÃßÃµÇÏ´Â ¸Þ´º ÀÔ´Ï´Ù.<br>
-¹Ì¼ÒµÈÀå¸¶¿ä¼Ò½º¸¦ Âï¾î¸ÔÀ¸´Ï ÇÑÃþ ¸ÀÀÌ ´õ ¾÷±×·¹ÀÌµå!!<br>
-Á¤¸» °­·ÂÃßÃµÇÏ´Â ¸Þ´ºÀÔ´Ï´Ù.</h6>
+<h3 class="recipe_h3">ì†ë‹˜ ìƒì°¨ë¦¼ìœ¼ë¡œë„ ì¢‹ì€ ì°¨ëŒë°•ì´ì°œ ìž…ë‹ˆë‹¤.<br>
+ë§Œë“¤ê¸°ë„ ë„ˆë¬´ ì‰½ê³  ëª¨ì–‘ë„ ì˜ˆë»ì„œ ì¶”ì²œí•˜ëŠ” ë©”ë‰´ìž…ë‹ˆë‹¤.<br>
+ë¯¸ì†Œëœìž¥ ë§ˆìš”ì†ŒìŠ¤ë¥¼ ì°ì–´ ë¨¹ìœ¼ë‹ˆ í•œ ì¸µ ë§›ì´ ë” ì—…ê·¸ë ˆì´ë“œ!!<br>
+ì •ë§ ê°•ë ¥ ì¶”ì²œí•˜ëŠ” ë©”ë‰´ìž…ë‹ˆë‹¤.</h3>
 <br>
 </div>
 
 
 
 <div class="redetail">
-<h5><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> ¿ä¸® Àç·á</h5>
+<h3 class="recipe_h3"><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> ìš”ë¦¬ ìž¬ë£Œ</h3>
 <br>
-<h6>[Àç·á]</h6>
-<p>Â÷µ¹¹ÚÀÌ 10Àå, ²¢ÀÙ 5Àå, ÆØÀÌ¹ö¼¸ 1¹­À½, ¼÷ÁÖ³ª¹° 1ÁÖ¸Ô</p>
+<h4 class="recipe_h4">[ìž¬ë£Œ]</h4>
+<p>ì°¨ëŒë°•ì´ 10ìž¥, ê¹»ìžŽ 5ìž¥, íŒ½ì´ë²„ì„¯ 1ë¬¶ìŒ, ìˆ™ì£¼ë‚˜ë¬¼ 1ì£¼ë¨¹</p>
 <br>
-<h6>[¹Ì¼ÒµÈÀå¸¶¿ä¼Ò½º]</h6>
-<p>¹Ì¼ÒµÈÀå 1Å«¼ù°¥, ¸¶¿ä³×Áî 1¼ù°¥, ¿Ã¸®°í´ç 1¼ù°¥, ´ÙÁø¸¶´Ã 0.5¼ù°¥, °íÃß°¡·ç 0.3¼ù°¥, <br>Ã»¾ç°íÃß 1°³´ÙÁø°Í, ¹° 2¼ù°¥</p>
+<h4 class="recipe_h4">[ë¯¸ì†Œëœìž¥ë§ˆìš”ì†ŒìŠ¤]</h4>
+<p>ë¯¸ì†Œëœìž¥ 1í°ìˆŸê°ˆ, ë§ˆìš”ë„¤ì¦ˆ 1ìˆŸê°ˆ, ì˜¬ë¦¬ê³ ë‹¹ 1ìˆŸê°ˆ, ë‹¤ì§„ë§ˆëŠ˜ 0.5ìˆŸê°ˆ, ê³ ì¶”ê°€ë£¨ 0.3ìˆŸê°ˆ, <br>ì²­ì–‘ê³ ì¶” 1ê°œë‹¤ì§„ê²ƒ, ë¬¼ 2ìˆŸê°ˆ</p>
 <br>
-<h5><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> Á¶¸® ¼ø¼­</h5>
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<h3 class="recipe_h3"><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> ì¡°ë¦¬ ìˆœì„œ</h3>
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ÆØÀÌ¹ö¼¸Àº ¹ØµÕÀ» Àß¶ó³»°í ¾Ä¾îÁÖ½Ã°í ²¢ÀÙµµ Èå¸£´Â¹°¿¡ ¾Ä¾îÁÖ¼¼¿ä</h6>
+	       <h4 class="recipe_h6"> íŒ½ì´ë²„ì„¯ì€ ë°‘ë‘¥ì„ ìž˜ë¼ë‚´ê³  ì”»ì–´ì£¼ì‹œê³  ê¹»ìžŽë„ íë¥´ëŠ”ë¬¼ì— ì”»ì–´ì£¼ì„¸ìš”</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -72,13 +120,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> Â÷µ¹¹ÚÀÌ À§¿¡²¢ÀÙÀ» ¿Ã¸®°í</h6>
+	       <h4 class="recipe_h6"> ì°¨ëŒë°•ì´ ìœ„ì—ê¹»ìžŽì„ ì˜¬ë¦¬ê³ </h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -86,13 +134,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ±×À§¿¡ ÆØÀÌ¹ö¼¸À» ¿Ã·ÁÁØµÚ</h6>
+	       <h4 class="recipe_h6">ê·¸ìœ„ì— íŒ½ì´ë²„ì„¯ì„ ì˜¬ë ¤ì¤€ë’¤</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -100,13 +148,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> µ¹µ¹ ¸»¾ÆÁÖ±â¸¸ÇÏ¸é ¿Ï¼ºÀÌ¿¡¿ä</h6>
+	       <h4 class="recipe_h6"> ëŒëŒ ë§ì•„ì£¼ê¸°ë§Œí•˜ë©´ ì™„ì„±ì´ì—ìš”</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -114,13 +162,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ¸¸µå´Â ¹æ¹ý ¿ÏÀü °£´ÜÇÏÁÒ?</h6>
+	       <h4 class="recipe_h6"> ë§Œë“œëŠ” ë°©ë²• ì™„ì „ ê°„ë‹¨í•˜ì£ ?</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -128,13 +176,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ³¿ºñ¿¡ ¼÷ÁÖ³ª¹°À» ÇÑÁÖ¸Ô ±ò°í</h6>
+	       <h4 class="recipe_h6"> ëƒ„ë¹„ì— ìˆ™ì£¼ë‚˜ë¬¼ì„ í•œì£¼ë¨¹ ê¹”ê³ </h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -142,13 +190,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>Â÷µ¹¹ÚÀÌ¸¦ ¿Ã·Á 10ºÐ°£ ÂÇÁÖ¸é ³¡</h6>
+	       <h4 class="recipe_h6">ì°¨ëŒë°•ì´ë¥¼ ì˜¬ë ¤ 10ë¶„ê°„ ìª„ì£¼ë©´ ë</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -156,15 +204,15 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> Â÷µ¹¹ÚÀÌÂòÀÌ ¿Ï¼ºµÇ´Â »çÀÌ ¼Ò½º¸¦ ¸¸µé¾îº¼°Ô¿ä!<br>
-	       	Ã³À½¿£ µÈÀåÀÌ¶û ¸¶¿ä³×Áî? ÇÏ½ÇÅÙµ¥ µå¼Åº¸½Ã¸é °í±â¶û Á¤¸» Àß¾î¿ï¸®´Â ¼Ò½º!<br>
-	       	ºÐ·®ÀÇ Àç·áµéÀ» Àß¼¯¾îÁÖ½Ã¸éµÇ±¸¿ä ¹Ì¼ÒµÈÀåÀÌ ¾øÀ¸½Ã´Ù¸é ÁýµÈÀå ¸»°í ½ÃÆÇµÈÀå ½Ì°Å¿î°É »ç¿ëÇÏ¼Åµµ µË´Ï´Ù</h6>
+	       <h4 class="recipe_h6"> ì°¨ëŒë°•ì´ì°œì´ ì™„ì„±ë˜ëŠ” ì‚¬ì´ ì†ŒìŠ¤ë¥¼ ë§Œë“¤ì–´ë³¼ê²Œìš”!<br>
+	       	ì²˜ìŒì—” ëœìž¥ì´ëž‘ ë§ˆìš”ë„¤ì¦ˆ? í•˜ì‹¤í…ë° ë“œì…”ë³´ì‹œë©´ ê³ ê¸°ëž‘ ì •ë§ ìž˜ì–´ìš¸ë¦¬ëŠ” ì†ŒìŠ¤!<br>
+	       	ë¶„ëŸ‰ì˜ ìž¬ë£Œë“¤ì„ ìž˜ì„žì–´ì£¼ì‹œë©´ë˜êµ¬ìš” ë¯¸ì†Œëœìž¥ì´ ì—†ìœ¼ì‹œë‹¤ë©´ ì§‘ëœìž¥ ë§ê³  ì‹œíŒëœìž¥ ì‹±ê±°ìš´ê±¸ ì‚¬ìš©í•˜ì…”ë„ ë©ë‹ˆë‹¤</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -172,14 +220,14 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> Â÷µ¹¹ÚÀÌ Âò±â¿¡ ³Ö°í ¼Ò½º¸¸µé¸é ±×»çÀÌ Â÷µ¹¹ÚÀÌÂò ¿Ï¼ºÀÔ´Ï´Ù<br>
-					±Ý»õ ÀÍ±â¶§¹®¿¡ Á¤¸» ÃÊ½ºÇÇµå·Î ¿Ï¼ºÇÒ¼öÀÖ´Â ¿ä¸®¿¡¿ä</h6>
+	       <h4 class="recipe_h6"> ì°¨ëŒë°•ì´ ì°œê¸°ì— ë„£ê³  ì†ŒìŠ¤ë§Œë“¤ë©´ ê·¸ì‚¬ì´ ì°¨ëŒë°•ì´ì°œ ì™„ì„±ìž…ë‹ˆë‹¤<br>
+					ê¸ˆìƒˆ ìµê¸°ë•Œë¬¸ì— ì •ë§ ì´ˆìŠ¤í”¼ë“œë¡œ ì™„ì„±í• ìˆ˜ìžˆëŠ” ìš”ë¦¬ì—ìš”</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -187,13 +235,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>¿¹»Ú°Ô ±×¸©¿¡ ´ã¾ÆÁÖ¸é ³¡!</h6>
+	       <h4 class="recipe_h6">ì˜ˆì˜ê²Œ ê·¸ë¦‡ì— ë‹´ì•„ì£¼ë©´ ë!</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -201,13 +249,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> µÈÀå¸¶¿ä¼Ò½º¿¡ ÄÛ Âï¾î¸ÔÀ¸¸é Á¤¸» ¸ÀÀÖ´ä´Ï´Ù. °­·ÂÃßÃµ!</h6>
+	       <h4 class="recipe_h6"> ëœìž¥ë§ˆìš”ì†ŒìŠ¤ì— ì½• ì°ì–´ë¨¹ìœ¼ë©´ ì •ë§ ë§›ìžˆë‹µë‹ˆë‹¤. ê°•ë ¥ì¶”ì²œ!</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -215,7 +263,7 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
 	
 		
 	
@@ -226,15 +274,46 @@ float:right;
 
 <br>
 <div class="text-center">
-<a href="/opalproject/recipemain" class="btn btn-warning">´Ù¸¥ ·¹½ÃÇÇ º¸·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-success">³ó»ê¹° »ç·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-warning">³ó°¡ º¸·¯°¡±â</a>
+<button onclick = "location.href = '/opalproject/recipemain' " class="btn_recipe">ë‹¤ë¥¸ ë ˆì‹œí”¼ ë³´ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/product' " class="btn_recipe">ë†ì‚°ë¬¼ ì‚¬ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/farm' " class="btn_recipe">ë†ê°€ ë³´ëŸ¬ê°€ê¸°</button>
 </div>
 
+
+
+	<footer class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col col-md-4"></div>
+					<div class="footer-col col-md-4">
+						<img src="resources/images/Opal.png" width="70%" height="70%" alt="">
+						<h5>with Health</h5>
+					</div>
+					<div class="footer-col col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer -->
+
+
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	window.jQuery
+			|| document
+					.write('<script src="resources/js/jquery.min.js"><\/script>')
+</script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/jquery.flexslider-min.js"></script>
+<script src="resources/js/jquery.fancybox.pack.js"></script>
+<script src="resources/js/jquery.waypoints.min.js"></script>
+<script src="resources/js/retina.min.js"></script>
+<script src="resources/js/modernizr.js"></script>
+<script src="resources/js/main.js"></script>
 
 </body>
 </html>

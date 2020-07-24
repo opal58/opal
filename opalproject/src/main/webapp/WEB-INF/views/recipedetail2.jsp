@@ -1,36 +1,127 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<style>
-.nong{
-font-size:0.8em;
-}
-</style>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPAL :: Recipe</title>
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/Opal.png">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/flexslider.css">
+<link rel="stylesheet" href="resources/css/jquery.fancybox.css">
+<link rel="stylesheet" href="resources/css/main.css">
+<link rel="stylesheet" href="resources/ourcss/recipedetail.css">
+<link rel="stylesheet" href="resources/css/responsive.css">
+<link rel="stylesheet" href="resources/css/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#nav ul#sub-menu").hide();
+		$("#nav ul#main-menu li").click(function() {
+			$("ul", this).slideToggle("fast");
+		});
+	});
+</script>
 </head>
 <body>
-<div class="text-center">
+
+
+	<section class="banner" role="banner">
+		<header id="header">
+			<div id="nav" class="header-content clearfix">
+				<a class="logo" href="/opalproject/index"> <img
+					src="resources/images/Opal.png" width="100" alt=""></a>
+				<nav class="navigation" role="navigation">
+					<ul id="main-menu" class="primary-nav">
+						<li><a href="/opalproject/about">ì˜¤íŒ”ì´ë€</a></li>
+						<li><a href="/opalproject/team">íŒ€ì†Œê°œ</a></li>
+						<!-- ë¡œê·¸ì¸ì¤‘ì´ ì•„ë‹ ë•Œì—ë§Œ Login ë²„íŠ¼ì´ ë³´ì„  -> taglib ( security/tags ) ë•Œë¬¸ì— ê°€ëŠ¥ -->
+						<sec:authorize access="isAnonymous()">
+							<li><a href='${pageContext.request.contextPath}/signin'>ë¡œê·¸ì¸</a></li>
+							<li><a href="/opalproject/signup">íšŒì›ê°€ì…</a></li>
+						</sec:authorize>
+						<sec:authorize access="isAuthenticated()">
+							<li><a href="#">íšŒì›ì •ë³´</a>
+								<ul id="sub-menu">
+									<li><a href="/opalproject/meminfomodify">íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
+									<li><a href="/opalproject/cart/list">ì¥ë°”êµ¬ë‹ˆ</a></li>
+								</ul>
+							<li><form action="${pageContext.request.contextPath}/logout" method="POST">
+									<input id="logoutBtn" class="logout_button" type="submit" value="ë¡œê·¸ì•„ì›ƒ" /> 
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+								</form></li>
+						</sec:authorize>
+					</ul>
+				</nav>
+				<a href="#" class="nav-toggle">Menu<span></span></a>
+			</div>
+			<!-- header content -->
+		</header>
+		<!-- header -->
+		<div class="container">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="banner-text text-center">
+					<h1>STORY</h1>
+				</div>
+				<!-- banner text -->
+			</div>
+		</div>
+	</section>
+	<!-- banner -->
+
+<div class="story">
 <img src="resources/img/farmst1_1.jpg" width="80%" alt="...">
 <img src="resources/img/farmst1_2.jpg" width="80%"  alt="...">
 <img src="resources/img/farmst1_3.jpg"  width="80%" alt="...">
 <img src="resources/img/farmst1_4.jpg"  width="80%" alt="...">
-<p class="nong">ÃâÃ³: ³óÃÌ±â¼úÆ÷ÅĞ ³ó»ç·Î(³óÃÌÁøÈïÃ»)</p>
+<h3 class="recipe_h3">ì¶œì²˜: ë†ì´Œê¸°ìˆ í¬í„¸ ë†ì‚¬ë¡œ(ë†ì´Œì§„í¥ì²­)</h3>
 </div>
 <br>
 <div class="text-center">
-<a href="/opalproject/recipemain" class="btn btn-warning">´Ù¸¥ ·¹½ÃÇÇ º¸·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-success">³ó»ê¹° »ç·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-warning">³ó°¡ º¸·¯°¡±â</a>
+<button onclick = "location.href = '/opalproject/recipemain' " class="btn_recipe">ë‹¤ë¥¸ ë ˆì‹œí”¼ ë³´ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/product' " class="btn_recipe">ë†ì‚°ë¬¼ ì‚¬ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/farm' " class="btn_recipe">ë†ê°€ ë³´ëŸ¬ê°€ê¸°</button>
 </div>
 
+
+	<footer class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col col-md-4"></div>
+					<div class="footer-col col-md-4">
+						<img src="resources/images/Opal.png" width="70%" height="70%" alt="">
+						<h5>with Health</h5>
+					</div>
+					<div class="footer-col col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer -->
+
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	window.jQuery
+			|| document
+					.write('<script src="resources/js/jquery.min.js"><\/script>')
+</script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/jquery.flexslider-min.js"></script>
+<script src="resources/js/jquery.fancybox.pack.js"></script>
+<script src="resources/js/jquery.waypoints.min.js"></script>
+<script src="resources/js/retina.min.js"></script>
+<script src="resources/js/modernizr.js"></script>
+<script src="resources/js/main.js"></script>
 
 </body>
 </html>

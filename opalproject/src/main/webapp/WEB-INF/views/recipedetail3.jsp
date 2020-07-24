@@ -1,67 +1,109 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<style>
-.dot {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.redetail{
-padding-left:20%;
-padding-right:20%;
-}
-
-.retable{
-width:50%;
-float:left;
-
-}
-
-.retable2{
-width:50%;
-float:right;
-}
-</style>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPAL :: Recipe</title>
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/Opal.png">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/flexslider.css">
+<link rel="stylesheet" href="resources/css/jquery.fancybox.css">
+<link rel="stylesheet" href="resources/css/main.css">
+<link rel="stylesheet" href="resources/ourcss/recipedetail.css">
+<link rel="stylesheet" href="resources/css/responsive.css">
+<link rel="stylesheet" href="resources/css/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#nav ul#sub-menu").hide();
+		$("#nav ul#main-menu li").click(function() {
+			$("ul", this).slideToggle("fast");
+		});
+	});
+</script>
 </head>
 <body>
+
+	<section class="banner" role="banner">
+		<header id="header">
+			<div id="nav" class="header-content clearfix">
+				<a class="logo" href="/opalproject/index"> <img
+					src="resources/images/Opal.png" width="100" alt=""></a>
+				<nav class="navigation" role="navigation">
+					<ul id="main-menu" class="primary-nav">
+						<li><a href="/opalproject/about">ì˜¤íŒ”ì´ëž€</a></li>
+						<li><a href="/opalproject/team">íŒ€ì†Œê°œ</a></li>
+						<!-- ë¡œê·¸ì¸ì¤‘ì´ ì•„ë‹ ë•Œì—ë§Œ Login ë²„íŠ¼ì´ ë³´ìž„  -> taglib ( security/tags ) ë•Œë¬¸ì— ê°€ëŠ¥ -->
+						<sec:authorize access="isAnonymous()">
+							<li><a href='${pageContext.request.contextPath}/signin'>ë¡œê·¸ì¸</a></li>
+							<li><a href="/opalproject/signup">íšŒì›ê°€ìž…</a></li>
+						</sec:authorize>
+						<sec:authorize access="isAuthenticated()">
+							<li><a href="#">íšŒì›ì •ë³´</a>
+								<ul id="sub-menu">
+									<li><a href="/opalproject/meminfomodify">íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
+									<li><a href="/opalproject/cart/list">ìž¥ë°”êµ¬ë‹ˆ</a></li>
+								</ul>
+							<li><form action="${pageContext.request.contextPath}/logout" method="POST">
+									<input id="logoutBtn" class="logout_button" type="submit" value="ë¡œê·¸ì•„ì›ƒ" /> 
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+								</form></li>
+						</sec:authorize>
+					</ul>
+				</nav>
+				<a href="#" class="nav-toggle">Menu<span></span></a>
+			</div>
+			<!-- header content -->
+		</header>
+		<!-- header -->
+		<div class="container">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="banner-text text-center">
+					<h1>RECIPE</h1>
+				</div>
+				<!-- banner text -->
+			</div>
+		</div>
+	</section>
+	<!-- banner -->
+
 <br>
 <br>
 <div class="text-center">
-<h1>³ó°¡ »ì¸®´Â OPAL ·¹½ÃÇÇ</h1>
+<h1 class="recipe_h1">ë†ê°€ ì‚´ë¦¬ëŠ” OPAL ë ˆì‹œí”¼</h1>
 <br>
-<img src="resources/img/remain2.png" width='350px' height='240px' alt="...">
+<img src="resources/img/remain2.png" width="500px">
 <br><br>
-<h6>°¥¾Æ¼­ ¸¸µéÁö ¾Ê°í Ã¤Ä®·Î ¾ã°Ô Ã¤½ä¾î¼­ ¸¸µç °¨ÀÚÃ¤Àü ÀÔ´Ï´Ù.<br>
-Ã¤½ä¾î¼­ ¸¸µé¾î ½Ä°¨ÀÌ ÁÁ¾Æ¿ä!
-</h6>
+<h3 class="recipe_h3">ê°ˆì•„ì„œ ë§Œë“¤ì§€ ì•Šê³  ì±„ì¹¼ë¡œ ì–‡ê²Œ ì±„ì°ì–´ì„œ ë§Œë“  ê°ìžì±„ì „ ìž…ë‹ˆë‹¤.<br>
+ì±„ì°ì–´ì„œ ë§Œë“¤ì–´ ì‹ê°ì´ ì¢‹ì•„ìš”!
+</h3>
 <br>
 </div>
 
 
 
 <div class="redetail">
-<h5><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> ¿ä¸® Àç·á</h5>
+<h3 class="recipe_h3"><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> ìš”ë¦¬ ìž¬ë£Œ</h3>
 <br>
-<h6>[Àç·á]</h6>
-<p>°¨ÀÚ 1°³, ºÎÄ§°¡·ç 0.5¼ù°¥, ¼Ò±Ý 0.3¼ù°¥</p>
+<h4 class="recipe_h4">[ìž¬ë£Œ]</h4>
+<p>ê°ìž 1ê°œ, ë¶€ì¹¨ê°€ë£¨ 0.5ìˆŸê°ˆ, ì†Œê¸ˆ 0.3ìˆŸê°ˆ</p>
 <br>
 
-<h5><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> Á¶¸® ¼ø¼­</h5>
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<h3 class="recipe_h3"><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> ì¡°ë¦¬ ìˆœì„œ</h3>
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>1ÀÎºÐ ºÐ·®ÀÇ °¨ÀÚÀü ·¹½ÃÇÇ ÀÔ´Ï´Ù. ´õ ¸¹ÀÌ ¸¸µå½Ç ºÐµéÀº ¾çÀ» ´Ã·ÁÁÖ½Ã¸é µÉ µí ÇÕ´Ï´Ù.</h6>
+	       <h4 class="recipe_h6">1ì¸ë¶„ ë¶„ëŸ‰ì˜ ê°ìžì „ ë ˆì‹œí”¼ ìž…ë‹ˆë‹¤.</br> ë” ë§Žì´ ë§Œë“œì‹¤ ë¶„ë“¤ì€ ì–‘ì„ ëŠ˜ë ¤ì£¼ì‹œë©´ ë  ë“¯ í•©ë‹ˆë‹¤.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -69,13 +111,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> °¨ÀÚ´Â ±ú²ýÈ÷ ¾Ä¾î ²®ÁúÀ» ¹þ±ä µÚ Ã¤Ä®À» ÀÌ¿ëÇØ¼­ ¾ã°Ô Ã¤½ä¾îÁÝ´Ï´Ù Ã¤Ä®ÀÌ ¾øÀ¸½Ã¸é Á÷Á¢ ÃÖ´ëÇÑ ¾ã°Ô ½ä¾îÁÖ¼¼¿ä</h6>
+	       <h4 class="recipe_h6"> ê°ìžëŠ” ê¹¨ë—ížˆ ì”»ì–´ ê»ì§ˆì„ ë²—ê¸´ ë’¤ ì±„ì¹¼ì„ ì´ìš©í•´ì„œ ì–‡ê²Œ ì±„ì°ì–´ì¤ë‹ˆë‹¤.</br> ì±„ì¹¼ì´ ì—†ìœ¼ì‹œë©´ ì§ì ‘ ìµœëŒ€í•œ ì–‡ê²Œ ì°ì–´ì£¼ì„¸ìš”.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -83,13 +125,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ¾ã°Ô Ã¤½ã °¨ÀÚ´Â Âù¹°¿¡ 10ºÐÁ¤µµ ´ã±Å ÀüºÐ±â¸¦ Á¦°ÅÇÏ°í Ã¤¹Ý¿¡ ¹ÞÃÄ ¹°±â¸¦ Á¦°ÅÇØÁÝ´Ï´Ù</h6>
+	       <h4 class="recipe_h6"> ì–‡ê²Œ ì±„ì¬ ê°ìžëŠ” ì°¬ë¬¼ì— 10ë¶„ì •ë„ ë‹´ê¶ˆ ì „ë¶„ê¸°ë¥¼ ì œê±°í•˜ê³ </br> ì±„ë°˜ì— ë°›ì³ ë¬¼ê¸°ë¥¼ ì œê±°í•´ì¤ë‹ˆë‹¤.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -97,13 +139,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>¾à°£ÀÇ Á¡¼ºÀ» ÁÖ±âÀ§ÇØ ºÎÄ§°¡·ç¸¦ 0.5¼ù°¥ ³Ö¾îÁÖ°í~ ¼Ò±Ýµµ ³Ö¾î °£À»ÇØÁØµÚ ¼¯¾îÁÝ´Ï´Ù</h6>
+	       <h4 class="recipe_h6">ì•½ê°„ì˜ ì ì„±ì„ ì£¼ê¸°ìœ„í•´ ë¶€ì¹¨ê°€ë£¨ë¥¼ 0.5ìˆŸê°ˆ ë„£ì–´ì£¼ê³ ~</br> ì†Œê¸ˆë„ ë„£ì–´ ê°„ì„í•´ì¤€ë’¤ ì„žì–´ì¤ë‹ˆë‹¤.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -111,13 +153,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6> ÀÌÁ¦ ÆÒ¿¡ ±â¸§À» µÎ¸£°í °¨ÀÚÃ¤ÀüÀ» ¸¸µé°Å¿¡¿ä °¨ÀÚÃ¤¸¦ µ¿±×¶þ°Ô ¸ð¾çÀâ¾Æ ¿Ã·ÁÁÖ¼¼¿ä</h6>
+	       <h4 class="recipe_h6"> ì´ì œ íŒ¬ì— ê¸°ë¦„ì„ ë‘ë¥´ê³  ê°ìžì±„ì „ì„ ë§Œë“¤ê±°ì—ìš”.</br> ê°ìžì±„ë¥¼ ë™ê·¸ëž—ê²Œ ëª¨ì–‘ìž¡ì•„ ì˜¬ë ¤ì£¼ì„¸ìš”.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -125,13 +167,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>¾Æ·§¸éÀÌ ´Ü´ÜÇÏ°Ô ÀÍ°í³ª¼­ µÚÁý¾î¾ß ¸ð¾çÀÌ ÈåÆ®·¯ÁöÁö¾Ê½À´Ï´Ù ÆÒ ¼ÕÀâÀÌ¸¦ Àâ°í È×È× ÆÒÀ» µ¹·ÈÀ»¶§ °¨ÀÚÀü¿¡ ÀÚÀ¯ÀÚÀç·Î ¿òÁ÷ÀÌ¸é ¾Æ·§¸éÀÌ ´Ü´ÜÇÏ°Ô ÀÍ¾ú´Ù´Â Áõ°Å¿¡¿ä</h6>
+	       <h4 class="recipe_h6">ì•„ëž«ë©´ì´ ë‹¨ë‹¨í•˜ê²Œ ìµê³ ë‚˜ì„œ ë’¤ì§‘ì–´ì•¼ ëª¨ì–‘ì´ ííŠ¸ëŸ¬ì§€ì§€ì•ŠìŠµë‹ˆë‹¤.</br> íŒ¬ ì†ìž¡ì´ë¥¼ ìž¡ê³  íœ™íœ™ íŒ¬ì„ ëŒë ¸ì„ë•Œ ê°ìžì „ì— ìžìœ ìžìž¬ë¡œ ì›€ì§ì´ë©´ ì•„ëž«ë©´ì´ ë‹¨ë‹¨í•˜ê²Œ ìµì—ˆë‹¤ëŠ” ì¦ê±°ì—ìš”.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -139,13 +181,13 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
-<!-- 20200722 ÈñÁ¤ Ä«µå ½ÃÀÛ -->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ì‹œìž‘ -->
 	<div class="card border-white mb-3" >
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h6>³ë¸©³ë¸© ÀßÀÍÇô¼­ ±×¸©¿¡ ´ã¾ÆÁÖ¸é ¿Ï¼º ¹ÝÂùÀ¸·Îµµ ÁÁ°í ¾ß½Ä, °£½ÄÀ¸·Îµµ Â¯Â¯!</h6>
+	       <h4 class="recipe_h6">ë…¸ë¦‡ë…¸ë¦‡ ìž˜ìµí˜€ì„œ ê·¸ë¦‡ì— ë‹´ì•„ì£¼ë©´</br> ì™„ì„± ë°˜ì°¬ìœ¼ë¡œë„ ì¢‹ê³  ì•¼ì‹, ê°„ì‹ìœ¼ë¡œë„ ì§±ì§±!</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
@@ -153,7 +195,7 @@ float:right;
 	    </div>
 	  </div>
 	</div>
-<!-- 20200722 ÈñÁ¤ Ä«µå ³¡-->
+<!-- 20200722 í¬ì • ì¹´ë“œ ë-->
 	
 </div>
 
@@ -162,15 +204,44 @@ float:right;
 
 <br>
 <div class="text-center">
-<a href="/opalproject/recipemain" class="btn btn-warning">´Ù¸¥ ·¹½ÃÇÇ º¸·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-success">³ó»ê¹° »ç·¯°¡±â</a>
-<a href="/opalproject/product" class="btn btn-warning">³ó°¡ º¸·¯°¡±â</a>
+<button onclick = "location.href = '/opalproject/recipemain' " class="btn_recipe">ë‹¤ë¥¸ ë ˆì‹œí”¼ ë³´ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/product' " class="btn_recipe">ë†ì‚°ë¬¼ ì‚¬ëŸ¬ê°€ê¸°</button>
+<button onclick = "location.href = '/opalproject/farm' " class="btn_recipe">ë†ê°€ ë³´ëŸ¬ê°€ê¸°</button>
 </div>
 
+
+
+	<footer class="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col col-md-4"></div>
+					<div class="footer-col col-md-4">
+						<img src="resources/images/Opal.png" width="70%" height="70%" alt="">
+						<h5>with Health</h5>
+					</div>
+					<div class="footer-col col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer -->
+
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	window.jQuery
+			|| document
+					.write('<script src="resources/js/jquery.min.js"><\/script>')
+</script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/jquery.flexslider-min.js"></script>
+<script src="resources/js/jquery.fancybox.pack.js"></script>
+<script src="resources/js/jquery.waypoints.min.js"></script>
+<script src="resources/js/retina.min.js"></script>
+<script src="resources/js/modernizr.js"></script>
+<script src="resources/js/main.js"></script>
 
 </body>
 </html>

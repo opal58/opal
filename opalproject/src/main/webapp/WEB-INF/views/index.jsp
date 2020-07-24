@@ -94,9 +94,9 @@
 	   
 	   <div style="margin-top:100px;">
 	   		<div class="submit_wrap">	   			
-	   			<button class="check_sumit" style="margin-right:50px;" onclick = "location.href = '/opalproject/product' ">전체 상품<br>보러 가기</button>
-	   			<button class="check_sumit" onclick = "location.href = '/opalproject/farm' ">전체 농가<br>보러 가기</button>
-	   			<button class="check_sumit" style="margin-right:50px;" onclick = "location.href = '/opalproject/recipemain' ">농가 살리는 건강한 밥상<br>보러 가기</button>
+	   			<button class="check_sumit" style="margin:30px;" onclick = "location.href = '/opalproject/product' ">전체 상품<br>보러 가기</button>
+	   			<button class="check_sumit" style="margin:30px;" onclick = "location.href = '/opalproject/farm' ">전체 농가<br>보러 가기</button>
+	   			<button class="check_sumit" style="margin:30px;" onclick = "location.href = '/opalproject/recipemain' ">농가 살리는 건강한 밥상<br>보러 가기</button>
 	   		</div>
 	   </div>
       <!-- 20200526 희정 checkbox 체크 개수 파악 -->
