@@ -38,12 +38,11 @@ float:right;
 <div class="text-center">
 <h1>농가 살리는 OPAL 레시피</h1>
 <br>
-<img src="resources/img/remain1.png" width='350px' height='240px' alt="...">
+<img src="resources/img/remain2.png" width='350px' height='240px' alt="...">
 <br><br>
-<h6>손님상차림으로도 좋은 차돌박이찜 입니다.<br>
-만들기도 너무쉽고 모양도 예뻐서 추천하는 메뉴 입니다.<br>
-미소된장마요소스를 찍어먹으니 한층 맛이 더 업그레이드!!<br>
-정말 강력추천하는 메뉴입니다.</h6>
+<h6>갈아서 만들지 않고 채칼로 얇게 채썰어서 만든 감자채전 입니다.<br>
+채썰어서 만들어 식감이 좋아요!
+</h6>
 <br>
 </div>
 

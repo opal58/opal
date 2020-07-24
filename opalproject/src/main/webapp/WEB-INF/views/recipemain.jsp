@@ -63,7 +63,7 @@
 	      <div class="card-body">
 	        <h5 class="text-center">농가살리는 콩나물새우찜</h5>
 	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
+	      		<a href="/opalproject/recipedetail4" class="btn btn-warning">레시피 보러가기</a>
 	      	</div>
 	      </div>
 	    </div>
@@ -85,35 +85,11 @@
 	      <div class="card-body">
 	        <h5 class="text-center">농가살리는 목살스테이크</h5>
 	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
+	      		<a href="/opalproject/recipedetail6" class="btn btn-warning">레시피 보러가기</a>
 	      	</div>
 	      </div>
 	    </div>
-	  </div>
-	  <div class="col mb-4">
-	    <div class="card">
-	      <img src="resources/img/remain5.png" class="card-img-top" alt="...">
-	      <div class="card-body">
-	        <h5 class="text-center">농가살리는 제육볶음</h5>
-	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
-	      	</div>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col mb-4">
-	    <div class="card">
-	      <img src="resources/img/remain6.png" class="card-img-top" alt="...">
-	      <div class="card-body">
-	        <h5 class="text-center">농가살리는 두부강된장</h5>
-	      	<div class="text-center">
-	      		<a href="#" class="btn btn-warning">레시피 보러가기</a>
-	      	</div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-</div>
+	  </div>	 
 <!-- 레시피 메인 카드 출력 끝 -->
 
 
