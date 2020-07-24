@@ -85,26 +85,23 @@
 <br>
 
 <div class="recipe_img">
-<img src="resources/img/remain1.png" width="500px">
+<img src="resources/img/remain3.png" width="500px">
 </div>
 <br><br>
-<h3 class="recipe_h3">손님 상차림으로도 좋은 차돌박이찜 입니다.<br>
-만들기도 너무 쉽고 모양도 예뻐서 추천하는 메뉴입니다.<br>
-미소된장 마요소스를 찍어 먹으니 한 층 맛이 더 업그레이드!!<br>
-정말 강력 추천하는 메뉴입니다.</h3>
+<h3 class="recipe_h3">
+달달하니 맛있는 새우를 이용해 콩나물새우찜을 만들어보도록 하겠습니다!<br>
+아삭아삭한 콩나물과 달달한 새우의 조합으로 밥도둑 레시피 입니다.
 <br>
 </div>
-
-
 
 <div class="redetail">
 <h3 class="recipe_h3"><img src="resources/img/reicon2.png" width=32px; height=32px; alt="..."> 요리 재료</h3>
 <br>
 <h4 class="recipe_h4">[재료]</h4>
-<p>차돌박이 10장, 깻잎 5장, 팽이버섯 1묶음, 숙주나물 1주먹</p>
+<p>새우 6-7마리, 바지락 1줌, 콩나물 1봉지, 미나리 약간, 대파 1대, 청양고추 2개, 홍고추 1개</p>
 <br>
-<h4 class="recipe_h4">[미소된장마요소스]</h4>
-<p>미소된장 1큰숟갈, 마요네즈 1숟갈, 올리고당 1숟갈, 다진마늘 0.5숟갈, 고추가루 0.3숟갈, <br>청양고추 1개다진것, 물 2숟갈</p>
+<h4 class="recipe_h4">[양념]</h4>
+<p>고추가루 4숟갈, 간장 3숟갈, 맛술 2숟갈, 올리고당 2숟갈, 다진마늘 1큰술, 후춧가루 톡톡</p>
 <br>
 <h3 class="recipe_h3"><img src="resources/img/reicon1.png" width=32px; height=32px; alt="..."> 조리 순서</h3>
 <!-- 20200722 희정 카드 시작 -->
@@ -112,11 +109,13 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 팽이버섯은 밑둥을 잘라내고 씻어주시고 깻잎도 흐르는물에 씻어주세요</h4>
+	       <h4 class="recipe_h6"> 새우만 넣을까 하다가 냉동실에 얼려둔 바지락이있어 함께 넣어줬어요.
+모듬해물같은거 같이 넣어주셔도 좋을것같구요~
+새우 까먹기 귀찮다거나 하시는 분들은 자숙새우 조금 큰걸로 하셔도 좋을듯 합니다.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_1.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_1.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -126,11 +125,12 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 차돌박이 위에깻잎을 올리고</h4>
+	       <h4 class="recipe_h6"> 새우찜에 빠질수없는 콩나물 준비!
+그리고 미나리, 대파, 고추 준비했어요.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_2.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_2.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -140,11 +140,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6">그위에 팽이버섯을 올려준뒤</h4>
+	       <h4 class="recipe_h6">고추가루가 좀 불어야 더 맛있기 때문에 양념을 미리 만들어 둡니다.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_3.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_3.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -154,11 +154,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 돌돌 말아주기만하면 완성이에요</h4>
+	       <h4 class="recipe_h6"> 콩나물도 씻어 준비해주고~ 야채들도 다듬어 적당한 사이즈로 잘라줍니다.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_4.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_4.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -168,11 +168,12 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 만드는 방법 완전 간단하죠?</h4>
+	       <h4 class="recipe_h6">본격적으로 만들어볼게요!
+미리 씻어 물기를 제거한 새우와 바지락을 팬에 넣어 익혀주세요.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_5.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_5.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -182,11 +183,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 냄비에 숙주나물을 한주먹 깔고</h4>
+	       <h4 class="recipe_h6">저는 바지락에서 물이 나와서 그냥 볶아가며 요리했는데 새우만 하신다면 물을 소주잔으로 한컵정도 넣어 익혀주시는게 좋습니다.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_6.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_6.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -196,11 +197,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6">차돌박이를 올려 10분간 쪄주면 끝</h4>
+	       <h4 class="recipe_h6">바지락이 입을 벌리고 새우도 벌겋게 익었다면 위에 콩나물을 넣고 뚜껑을 덮어 콩나물의 숨을 죽여주세요.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_7.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_7.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -210,13 +211,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 차돌박이찜이 완성되는 사이 소스를 만들어볼게요!<br>
-	       	처음엔 된장이랑 마요네즈? 하실텐데 드셔보시면 고기랑 정말 잘어울리는 소스!<br>
-	       	분량의 재료들을 잘섞어주시면되구요 미소된장이 없으시다면 집된장 말고 시판된장 싱거운걸 사용하셔도 됩니다</h4>
+	       <h4 class="recipe_h6"> 콩나물이 한김 숨죽고나서~ 미리 만들어둔 양념장을 넣고 잘섞어 볶아줍니다.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_8.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_8.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -226,12 +225,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 차돌박이 찜기에 넣고 소스만들면 그사이 차돌박이찜 완성입니다<br>
-					금새 익기때문에 정말 초스피드로 완성할수있는 요리에요</h4>
+	       <h4 class="recipe_h6"> 마무리로 대파랑 고추 넣어 섞어주고</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_9.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_9.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -241,11 +239,12 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6">예쁘게 그릇에 담아주면 끝!</h4>
+	       <h4 class="recipe_h6">제일 마지막에 미나리 올려주기!
+마무리로 기호에 따라 참기름을 살짝 둘러주셔도 좋아요.</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_10.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_10.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
@@ -255,11 +254,11 @@
 	  <div class="row no-gutters">  
 	    <div class="col-md-8">
 	      <div class="card-body">
-	       <h4 class="recipe_h6"> 된장마요소스에 콕 찍어먹으면 정말 맛있답니다. 강력추천!</h4>
+	       <h4 class="recipe_h6"> 그릇에 예쁘게 담고 통깨 솔솔 뿌려주면 제철새우로 만든 매콤한 새우찜 완성!</h4>
 	      </div>
 	    </div>
 	    <div class="col-md-4">
-	      <img src="resources/img/redetail1_11.png" height="150px" width="200px" class="card-img" alt="...">
+	      <img src="resources/img/redetail3_11.png" height="150px" width="200px" class="card-img" alt="...">
 	    </div>
 	  </div>
 	</div>
