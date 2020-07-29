@@ -11,7 +11,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 >
  
 <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean> <!-- 아래에서 로그인 시 권한없을 때 이동페이지 설정 등록 빈 -->
-<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+<!-- <bean id="customLoginFailure" class="org.zerock.security.CustomLoginFailureHandler"></bean>
+ --><bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 <security:http>
  	<!--  200521 김동규 페이지 접근 권한 설정. -->
@@ -41,10 +42,13 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 <security:form-login 
 username-parameter="cust_id" 
 password-parameter="cust_pw" 
-login-processing-url="/index" 
+login-processing-url="/index"
+authentication-failure-url="/signin?error=true"
 login-page="/signin" 
 authentication-success-handler-ref="customLoginSuccess"
-authentication-failure-url="/login?fail=true"/>	
+/>
+<!--authentication-failure-handler-ref="customLoginFailure"  -->
+<!-- -->	
 <security:logout
  logout-url="/logout" 
  logout-success-url="/index"/>
@@ -63,8 +67,8 @@ authentication-failure-url="/login?fail=true"/>
 </security:authentication-manager>
  <bean id="userService" class="service.CustomCustomerDetailsService"/>
 <bean id="userAuthProvider" class="service.CustomAuthenticationProvider"/>
-
-<!-- <bean id="dataSource" 
+<!-- <bean id="customerMapper" class="org.zerock.security.CustomerMapper"/>
+ --><!-- <bean id="dataSource" 
 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
       <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />

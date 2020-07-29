@@ -107,7 +107,7 @@
 					</div>
 					<div class="product_content">
 						<h1 id="name" name="name"><%=listOne2.getFarm_name()%>농장</h1><br>
-						<div contenteditable="true" id="content" name="content"><h4><%=listOne2.getFarm_content()%></h4></div>
+						<div contenteditable="false" id="content" name="content"><h4><%=listOne2.getFarm_content()%></h4></div>
 					</div>
 					</div>
 					<h1>농장 상품 보기</h1>

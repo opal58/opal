@@ -59,8 +59,9 @@
 						<sec:authorize access="isAuthenticated()">
 							<li><a href="#">회원정보</a>
 								<ul id="sub-menu">
-							        <li><a href="/opalproject/meminfomodify">회원정보 수정</a></li>
-							        <li><a href="/opalproject/cart/list">장바구니</a></li>
+									<li><a href="#">내 질병 분석 보기</a></li>
+									<li><a href="/opalproject/meminfomodify">회원정보 수정</a></li>
+									<li><a href="/opalproject/cart/list">장바구니</a></li>
 								</ul>
 							<li><form action="${pageContext.request.contextPath}/logout" method="POST">
 									<input id="logoutBtn" class="logout_button" type="submit" value="로그아웃" /> 
@@ -84,7 +85,7 @@
 		</div>
 	</section>
 	<!-- banner -->
-	
+
 	
    <section id="customLogin">
       <div class="login_card">
@@ -98,6 +99,9 @@
 					<div><input class="input" type="password" name="cust_pw" placeholder="비밀번호" autocomplete="off"></div>
 					<div><button type="submit" class="login_button">로그인</button></div>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+					<c:if test="${ errormsg eq 'incorrect' }">
+						<b style="color:red;">아이디 또는 비밀번호를 확인해주세요.</b>
+					</c:if>
 				</form>
 
 			<div class="en">

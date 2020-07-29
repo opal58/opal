@@ -40,7 +40,7 @@
 	$(document).ready(function(){
 		// 리스트 페이지로 이동
 		$("#btnList").click(function(){
-			location.href="/opalproject/goods";
+			location.href="/opalproject/product";
 		});
 	});
 </script>
@@ -180,7 +180,8 @@
   <div class="btn_wrapper">
   <div class="btn_inner">
   <button type="button" id="btnList" class="btn_back">상품목록</button>
-  <button type="button" id="btnPay"class="btn_pay">결제하기</button>
+  	<button type="button" id="btnPay"class="btn_pay">결제하기</button>
+
   </div>
 </div>  
  

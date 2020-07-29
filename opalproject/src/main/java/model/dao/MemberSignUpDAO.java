@@ -24,7 +24,8 @@ public class MemberSignUpDAO {
 	
 	public boolean insertMember(CustomerVO vo) {
 		boolean result = false;
-		vo.setCust_pw(pwencoder.encode(vo.getCust_pw()));
+		
+		vo.setCust_pw("{bcrypt}" + pwencoder.encode(vo.getCust_pw()));
 		System.out.println(vo);
 		String statement = "resource.MemberMapper.customerSignUp";
 		if (session.insert(statement, vo) == 1)

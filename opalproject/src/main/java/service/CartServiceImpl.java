@@ -29,7 +29,7 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<CartVO> listCart(int cust_cd) throws IndexOutOfBoundsException {
 		System.out.println("CartServiceImpl의 listCart의 cust_cd"+cust_cd);
-		return cartDao.listCart(1);
+		return cartDao.listCart(cust_cd);
 	}
 	// 3. 장바구니 삭제
 	@Override

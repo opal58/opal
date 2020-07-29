@@ -158,8 +158,8 @@
       <input type="hidden" name="sick_cd" value="<%=sick_cd[i]%>">
       <%} %>
       <h5>고객님께서 선택하신 모든 질병에 대한 정보를 종합하여 맟춤형 음식을 추천해드리겠습니다.</h5>
-      <h5> 질병별 상관관계 분석하기 버튼을 클릭해주세요.</h5>
-      <button class="check_sumit" >질병별 상관관계 분석하기</button>
+      <h5> 질병별 교차 분석하기 버튼을 클릭해주세요.</h5>
+      <button class="check_sumit" >질병별 교차 분석하기</button>
       <input type="hidden" name="${_csrf.parameterName}"
          value="${_csrf.token}">
    </form>

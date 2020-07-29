@@ -77,7 +77,7 @@
 <%String msg = (String)request.getAttribute("msg");%>
 
 <div class="modify">
-<form method="POST" action="/opalproject/mypage2">
+<form method="POST" action="/opalproject/mypage">
 
 <div class="checkpwd">
 <div class="checkpwd_board">

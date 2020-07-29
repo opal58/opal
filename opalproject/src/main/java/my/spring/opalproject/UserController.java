@@ -1,5 +1,7 @@
 package my.spring.opalproject;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.dao.MemberSignUpDAO;
-import model.vo.CustomCustomerDetails;
 import model.vo.CustomerVO;
 
 @Controller
@@ -40,8 +41,16 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/signin")
-	public String signIn() {
-		System.out.println("로그인 폼으로");
+	public String signIn(HttpServletRequest request, @RequestParam(value="error", defaultValue="") String errormsg) {
+		
+		System.out.println("로그인 폼 시작 errormsg : " + errormsg );
+		
+		if(errormsg.equals("true")) {
+			errormsg = "incorrect";
+			System.out.println("로그인 인증 실패 errormsg : " + errormsg );
+			request.setAttribute("errormsg", errormsg);
+		}
+		
 		return "signInForm";
 	}
 	
@@ -50,17 +59,15 @@ public class UserController {
 			CustomerVO vo,
 			@RequestParam(value="cust_email1") String cust_email1, 
 			@RequestParam(value="cust_email2") String cust_email2,
-			@RequestParam(value="cust_pnum1") String cust_pnum1,
-			@RequestParam(value="cust_pnum2") String cust_pnum2,
-			@RequestParam(value="cust_pnum3") String cust_pnum3,
+			@RequestParam(value="cust_pnum") String cust_pnum,
 			@RequestParam(value="cust_address1", defaultValue="()") String cust_address1,
 			@RequestParam(value="cust_address2", defaultValue="()") String cust_address2,
 			@RequestParam(value="cust_address3", defaultValue="()") String cust_address3,
 			@RequestParam(value="cust_address4", defaultValue="()") String cust_address4) {
 		ModelAndView mav = new ModelAndView();
 		vo.setCust_email(cust_email1+"@"+cust_email2);
-		vo.setCust_address(cust_address1+cust_address2+cust_address3+cust_address4);
-		vo.setCust_pnum(cust_pnum1+cust_pnum2+cust_pnum3);
+		vo.setCust_address(cust_address1 + "/" + cust_address2 + "/" + cust_address3 + "/" + cust_address4);
+		vo.setCust_pnum(cust_pnum);
 		if(msudao.insertMember(vo))
 			System.out.println(vo.getCust_id()+"님 회원가입 성공");
 		else

@@ -38,6 +38,14 @@
 	});
 </script>
 
+<script>
+	$(document).ready(function(){
+		// 리스트 페이지로 이동
+		$("#btns").click(function(){
+			location.href="/opalproject/signin";
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -112,7 +120,12 @@
 							
 							
 							<h1>${principal.username}</h1>
+							<sec:authorize access="isAnonymous()">
+								<form name="form1" method="POST" action="/opalproject/signin">
+							</sec:authorize>
+							<sec:authorize access="isAuthenticated()">
 								<form name="form1" method="POST" action="/opalproject/cart/insert">
+							</sec:authorize>
 									<input type="hidden" name="product_name" value="<%=listOne.getProduct_name()%>"> 
 									<input type="hidden" name="money" value=" <%=listOne.getProduct_price()%>"> 
 									<input type="hidden" name="product_cd" value="${ listOne.product_cd}">
@@ -126,10 +139,12 @@
 									</table>
 								</div>
 								<div class="product_input">
-				
-									<input type="submit" class="btn_input" value="장바구니에 담기"> 
-							
-							
+				 			<sec:authorize access="isAnonymous()">
+									<input type="submit" id="btns" class="btn_input" value="장바구니에 담기">
+							</sec:authorize>
+							 <sec:authorize access="isAuthenticated()">
+							 	<input type="submit" class="btn_input"value="장바구니에 담기"> 
+							 </sec:authorize>
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 					</form>
 					
@@ -141,7 +156,7 @@
 					
 					
 					
-					<button class="btn_back" onclick="location.href='/opalproject/goods'">상품목록</button>
+					<button class="btn_back" onclick="location.href ='/opalproject/product'">상품목록</button>
 				</div>
 			</div>
 		</div>

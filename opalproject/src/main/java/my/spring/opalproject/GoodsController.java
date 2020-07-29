@@ -27,6 +27,7 @@ public class GoodsController {
 		ModelAndView mav = new ModelAndView();
 		List<GoodsVO> list = dao.listAll();
 		System.out.println("리스트 안오냥"+list);
+		
 		for(String food : food_cd)
 		System.out.println("컨트롤러 food_cd값은?"+food);			
 		

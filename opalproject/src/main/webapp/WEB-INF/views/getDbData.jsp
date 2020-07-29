@@ -14,7 +14,7 @@ try {
 }
 
 try(Connection connection = DriverManager.getConnection(
-		"jdbc:oracle:thin:@localhost:1521:xe","opal","opal");
+		"jdbc:oracle:thin:@localhost:1521:XE","opal","opal");
 		PreparedStatement pstmt = connection.prepareStatement
 				("select * from customer where cust_id ='"+a+"'",ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);)
 {

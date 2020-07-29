@@ -33,6 +33,7 @@
 		});
 	});
 </script>
+
 </head>
 <body>
  
@@ -244,33 +245,23 @@ window.onload = function(){
 			}
 			
 		}
-	}
+	
 	
 	//핸드폰 번호 체크
-	var cust_pnum1_dom = document.getElementById("cust_pnum1");
-	var cust_pnum2_dom = document.getElementById("cust_pnum2");
-	var cust_pnum3_dom = document.getElementById("cust_pnum3");
-	var pnumCheck_pattern = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+	var cust_pnum_dom = document.getElementById("cust_pnum");
+	var pnumCheck_pattern = /^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/;
 	var h5_pnumcheck = document.getElementById("pnumcheck");
 	
-	cust_pnum1_dom.onchange = function(){
-		if(pnumCheck_pattern.test(cust_pnum1_dom.value+"-"+cust_pnum2_dom.value+"-"+cust_pnum3_dom.value))
+	cust_pnum_dom.onchange = function(){
+		
+		if(pnumCheck_pattern.test(cust_pnum_dom.value)==true)
 			h5_pnumcheck.innerHTML = "유효한 핸드폰 번호입니다.";
+		
 		else
 			h5_pnumcheck.innerHTML = "핸드폰 번호를 확인해주세요.";
+
 	}
-	cust_pnum2_dom.onchange = function(){
-		if(pnumCheck_pattern.test(cust_pnum1_dom.value+"-"+cust_pnum2_dom.value+"-"+cust_pnum3_dom.value))
-			h5_pnumcheck.innerHTML = "유효한 핸드폰 번호입니다.";
-		else
-			h5_pnumcheck.innerHTML = "핸드폰 번호를 확인해주세요.";
-	}
-	cust_pnum3_dom.onchange = function(){
-		if(pnumCheck_pattern.test(cust_pnum1_dom.value+"-"+cust_pnum2_dom.value+"-"+cust_pnum3_dom.value))
-			h5_pnumcheck.innerHTML = "유효한 핸드폰 번호입니다.";
-		else
-			h5_pnumcheck.innerHTML = "핸드폰 번호를 확인해주세요.";
-	}
+}
 </script>
 <%String member = (String)request.getAttribute("member"); %>
    <section id="entrance">
@@ -285,7 +276,7 @@ window.onload = function(){
           <label for="radio"><input id= "radio" type="radio" name="member" disabled>파트너</label>
                   </td>
                </tr>
-                </tr>
+             
                <tr>
                   <td class="td_name">이름</td>
                   <td class="td_text">
@@ -310,9 +301,9 @@ window.onload = function(){
                   <br><span>*비밀번호 확인을 위해서 한 번만 더 입력해주세요.</span></td>
                        
                </tr>
-               <script>
+               
                      
-               </script>
+            
                 <tr>
                   <td class="td_name">성별</td>
                   <td class="td_text">
@@ -353,19 +344,17 @@ window.onload = function(){
               <tr>
               <td class="td_name">휴대폰번호</td>
               <td class="td_text">
-              <input id="cust_pnum1" type="number" style="width: 200px; text-align: left;" type="text" name="cust_pnum1" autocomplete=”off”  required>-
-              <input id="cust_pnum2" type="number" style="width: 200px; text-align: left;" type="text" name="cust_pnum2" autocomplete=”off”  required>-
-              <input id="cust_pnum3" type="number" style="width: 200px; text-align: left;" type="text" name="cust_pnum3" autocomplete=”off”  required>
+              <input id="cust_pnum" type="text" style="width: 200px; text-align: left;" type="text" name="cust_pnum" maxlength=11 autocomplete=”off” required>
               <h5 id="pnumcheck"></h5></td>
               </tr>
                <tr>
                   <td class="td_name">주소</td>
                   <td class="td_text">
-                     <input type="text" id="sample6_postcode" placeholder="우편번호" name="cust_address1" autocomplete=”off” disabled required>
+                     <input type="text" id="sample6_postcode" placeholder="우편번호" name="cust_address1" autocomplete=”off” readonly required>
                      <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" autocomplete=”off” ><br> 
-                     <input type="text" id="sample6_address" placeholder="주소" style="width: 300px;" name="cust_address2" autocomplete=”off” disabled required><br>
+                     <input type="text" id="sample6_address" placeholder="주소" style="width: 300px;" name="cust_address2" autocomplete=”off” readonly required><br>
                      <input type="text" id="sample6_detailAddress" placeholder="상세주소" style="width: 500px;" name="cust_address3" autocomplete=”off” required>
-                     <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="cust_address4" autocomplete=”off” disabled required>
+                     <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="cust_address4" autocomplete=”off” readonly required>
                    </td>
                </tr>
             </tbody>

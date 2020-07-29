@@ -56,9 +56,9 @@
 			<ul id = "main-menu" class="primary-nav">
 			  <li><a href="/opalproject/about">오팔이란</a></li>
 			  <li><a href="/opalproject/team">팀소개</a></li>
-			   <li><a href="/opalproject/signup">회원가입</a></li>
 			  <!-- 로그인중이 아닐 때에만 Login 버튼이 보임  -> taglib ( security/tags ) 때문에 가능 -->
 			<sec:authorize access="isAnonymous()">
+				<li><a href="/opalproject/signup">회원가입</a></li>
 			  <li><a href='${pageContext.request.contextPath}/signin'>로그인</a></li>
 			</sec:authorize>
 			<sec:authorize access="isAuthenticated()">
